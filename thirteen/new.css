@@ -1,0 +1,107 @@
+body{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    -webkit-text-size-adjust: 100%;
+}
+
+#globalWrapper{
+
+}
+
+/* Header */
+
+#header{
+
+}
+
+#p-search{
+ padding: 1em;
+ width: 25em;
+}
+
+#p-search h5{
+    /*hide the title of the search box*/
+    display: none;
+}
+
+/* Main Content */
+
+#column-content{
+
+}
+
+#siteSub{
+    /*hides the site subtitle which by default just says "From SiteName"*/
+    display: none;
+}
+
+/*Portlets (ie: personal tools, views) */
+
+.portlet{
+    border: 1px solid #818CA5;
+    background-color: #ccffcc;
+    margin: 1em;
+    width: 20em;
+    /* list-style: none; */
+}
+
+.portlet h5{
+	display:none;
+}
+
+.portlet ul {
+	list-style: none;
+	margin: 1em;
+	padding: 0;
+}
+
+.portlet li {
+	border: 1px solid #aaa;
+	max-width: 10em;
+	padding-right: 1em;
+	padding-left: 1em;
+	padding-top: 0.5em;
+	height: 2.5em;
+	background-color: #fbfbfb;
+	text-align: center;
+	whitespace: nowrap;
+	margin-bottom: 1em;
+}
+.portlet li.selected {
+	border-color: #fabd23;
+	font-weight: bold;
+}
+.portlet li a {
+	color: #002bb8;
+	text-decoration: none;
+}
+
+.portlet .new a {
+	color: #ba0000;
+}
+
+.portlet li a {
+	text-transform: lowercase;
+}
+
+
+/* Code for display pre / code tags */
+
+code {
+	background-color: #f9f9f9;
+}
+pre {
+	padding: 1em;
+	border: 1px dashed #2f6fab;
+	color: black;
+	background-color: #f9f9f9;
+	line-height: 1.1em;
+}
+
+
+/* hide the retrieved from text */
+.printfooter{
+    display: none;
+}
+
+html {
+  font-size: 0.8em; }

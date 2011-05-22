@@ -1,0 +1,114 @@
+/* CSS placed here will affect users of the Monobook skin */
+/*<pre><nowiki>*/
+
+/* === Bold 'edit this page' link to encourage newcomers === */
+
+#ca-edit a { 
+    font-weight: bold !important; 
+}
+
+
+/* === Left Navigation === */
+
+.portlet h5 {
+background:transparent none repeat scroll 0 0;
+border:medium none;
+color:#7F7F7F;
+display:inline;
+font-style:italic;
+height:1em;
+padding:0 1em 0 0.5em;
+white-space:nowrap;
+}
+
+.pBody { background: #ccffcc; color:black; }
+
+/* === Body === */
+
+body { 
+    background: #FFFFFF; 
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+
+/* === Borders === */
+
+#content {
+    border: 2px solid #818CA5;
+}
+/*
+#p-cactions li.selected {
+    border-color: #8CB28B;
+}
+*/
+
+#p-navigation .pBody, #p-search .pBody, #p-tb .pBody, #portlet h5 .pBody { 
+    border: 1px solid #818CA5;
+}
+
+.pBody { 
+    border: 1px solid #818CA5;
+}
+
+/* === Bullets === */
+
+ul {
+    list-style-image: url(images/3/35/BulletOn.png);
+}
+
+.portlet ul {
+    list-style-image: url(images/7/75/BulletOff.png); 
+}
+.portlet ul li:hover { 
+    list-style-image: url(images/3/35/BulletOn.png); 
+}
+
+/* === search box === */
+
+#searchInput { 
+    background: #ECFFE6; border: 2px solid #8CB28B; 
+} 
+
+/* navigation and other left-menu boxes */
+
+/*
+#p-search, #p-navigation, #p-tb, #p-lang { 
+    margin: 1em 0.5em; width: 11.2em; 
+} */
+
+#p-tb .pBody a, #p-lang .pBody a,  #p-participate .pBody a { 
+    color: black; text-decoration: none; 
+} 
+
+#p-navigation .pBody a:hover, p-tb .pBody a:hover, #p-lang .pBody a:hover, #p-participate .pBody a:hover {
+    color: #555 !important; 
+} 
+
+/* Personal links at the top right */
+
+#p-personal .pBody ul { 
+    background: #ccffcc; border-bottom: 1px solid #818CA5; border-left: 1px solid #818CA5; float: right; padding-left: 0; height: 1.45em; 
+} 
+
+#p-personal li { 
+    margin: 0; 
+} 
+
+#p-personal li a { 
+    padding: 0.5em; 
+} 
+
+#p-personal li a:hover { 
+    background: #8CB28B; 
+}
+
+
+/* === main page === */
+
+.page-Welcome_to_Appropedia h1.firstHeading { 
+    Color: #818CA5; 
+}
+
+
+/*</nowiki></pre>*/
+
