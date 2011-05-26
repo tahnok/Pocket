@@ -40,7 +40,6 @@ body{
     border: 1px solid #818CA5;
     background-color: #ccffcc;
     margin: 1em;
-    width: 20em;
     /* list-style: none; */
 }
 
@@ -56,15 +55,10 @@ body{
 
 .portlet li {
 	border: 1px solid #aaa;
-	max-width: 10em;
-	padding-right: 1em;
-	padding-left: 1em;
-	padding-top: 0.5em;
-	height: 2.5em;
 	background-color: #fbfbfb;
 	text-align: center;
 	whitespace: nowrap;
-	margin-bottom: 1em;
+	margin-bottom: 0.5em;
 }
 .portlet li.selected {
 	border-color: #fabd23;
@@ -73,6 +67,13 @@ body{
 .portlet li a {
 	color: #002bb8;
 	text-decoration: none;
+	display: block;
+	height:2em;
+}
+
+.portlet li a:hover{
+    background-color: #DBF1F9;
+   
 }
 
 .portlet .new a {

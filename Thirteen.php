@@ -33,13 +33,6 @@ class SkinThirteen extends SkinTemplate {
 		// $out->addStyle( 'thirteen/mobile.css', 'screen');
 		$out->addStyle( 'thirteen/new.css', 'screen');
 
-		$out->addStyle( 'thirteen/IE50Fixes.css', 'screen', 'lt IE 5.5000' );
-		$out->addStyle( 'thirteen/IE55Fixes.css', 'screen', 'IE 5.5000' );
-		$out->addStyle( 'thirteen/IE60Fixes.css', 'screen', 'IE 6' );
-		$out->addStyle( 'thirteen/IE70Fixes.css', 'screen', 'IE 7' );
-
-		$out->addStyle( 'thirteen/rtl.css', 'screen', '', 'rtl' );
-
 	}
 }
 
@@ -68,6 +61,7 @@ class ThirteenTemplate extends QuickTemplate {
 
 		$this->html( 'headelement' );
 	?>
+<!--Must move this to <head> at some point. It fixes the width on mobile screens --!>
 <meta name="viewport" content="width = device-width">
 
 	<div id="globalWrapper">
@@ -107,9 +101,10 @@ class ThirteenTemplate extends QuickTemplate {
 		 <div id="p-cactions" class="portlet">
 	      <h5><?php $this->msg('views') ?></h5>
 				<div class="pBody">
-					<ul><?php
+					<ul>
+				    <li>insert collapse button here</li>
+				    <?php
 					foreach($this->data['content_actions'] as $key => $tab) {
-		  if( in_array($key, array( 'edit' , 'talk', 'nstab-main' ))){
 						echo '
 					 <li id="' . Sanitizer::escapeId( "ca-$key" ) . '"';
 						if( $tab['class'] ) {
@@ -129,7 +124,7 @@ class ThirteenTemplate extends QuickTemplate {
 				 		echo $skin->tooltipAndAccesskey( "ca-$key" );
 					 	}
 					 	echo '>'.htmlspecialchars($tab['text']).'</a></li>';
-		      }} ?>
+		      } ?>
 
 					</ul>
 				</div>
@@ -139,15 +134,14 @@ class ThirteenTemplate extends QuickTemplate {
 				<h5><?php $this->msg('personaltools') ?></h5>
 				<div class="pBody">
 					<ul<?php $this->html('userlangattributes') ?>>
-					<?php foreach($this->data['personal_urls'] as $key => $item) { 
-		  if(!in_array( $key, array('mycontris'))){ ?>
+					<?php foreach($this->data['personal_urls'] as $key => $item) {  ?>
 						<li id="<?php echo Sanitizer::escapeId( "pt-$key" ) ?>"<?php
 						if ($item['active']) { ?> class="active"<?php } ?>><a href="<?php
 						echo htmlspecialchars($item['href']) ?>"<?php echo $skin->tooltipAndAccesskey('pt-'.$key) ?><?php
 						if(!empty($item['class'])) { ?> class="<?php
 						echo htmlspecialchars($item['class']) ?>"<?php } ?>><?php
 						echo htmlspecialchars($item['text']) ?></a></li>
-							  <?php }} ?>
+							  <?php } ?>
 					</ul>
 				</div>
 			</div>
@@ -195,7 +189,7 @@ class ThirteenTemplate extends QuickTemplate {
 ?>
 	<div id="p-search" class="portlet">
 		<h5><label for="searchInput"><?php $this->msg('search') ?></label></h5>
-		<div id="searchBody" class="pBody"
+		<div id="searchBody" class="pBody">
 						
 			<form action="<?php $this->text('wgScript') ?>" id="searchform">
 				<input type='hidden' name="title" value="<?php $this->text('searchtitle') ?>"/>
