@@ -57,7 +57,7 @@ body{
 	border: 1px solid #aaa;
 	background-color: #fbfbfb;
 	text-align: center;
-	whitespace: nowrap;
+	white-space: nowrap;
 	margin-bottom: 0.5em;
 }
 .portlet li.selected {
@@ -106,3 +106,11 @@ pre {
 
 html {
   font-size: 0.8em; }
+
+.hidden{
+    display: none;
+}
+
+#actions, #personalTools{
+    display: none;
+}

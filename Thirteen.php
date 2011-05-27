@@ -1,13 +1,7 @@
 <?php
 /**
  * Thirteen nouveau
- *
- * Translated from gwicke's previous TAL template version to remove
- * dependency on PHPTAL.
- *
- * @todo document
- * @file
- * @ingroup Skins
+ * Author:
  */
 
 if( !defined( 'MEDIAWIKI' ) )
@@ -15,8 +9,7 @@ if( !defined( 'MEDIAWIKI' ) )
 
 /**
  * Inherit main code from SkinTemplate, set the CSS and template filter.
- * @todo document
- * @ingroup Skins
+
  */
 class SkinThirteen extends SkinTemplate {
 	/** Using thirteen. */
@@ -63,7 +56,7 @@ class ThirteenTemplate extends QuickTemplate {
 	?>
 <!--Must move this to <head> at some point. It fixes the width on mobile screens --!>
 <meta name="viewport" content="width = device-width">
-
+<script src="<?php $this->text('stylepath' ) ?>/thirteen/jquery.js"></script>
 	<div id="globalWrapper">
 	   <div id="header">
 	   <?php
@@ -102,7 +95,8 @@ class ThirteenTemplate extends QuickTemplate {
 	      <h5><?php $this->msg('views') ?></h5>
 				<div class="pBody">
 					<ul>
-				    <li>insert collapse button here</li>
+				    <li id="toggleActions"><a href="#">Toggle Actions</a></li>
+				    <div id="actions">
 				    <?php
 					foreach($this->data['content_actions'] as $key => $tab) {
 						echo '
@@ -125,6 +119,7 @@ class ThirteenTemplate extends QuickTemplate {
 					 	}
 					 	echo '>'.htmlspecialchars($tab['text']).'</a></li>';
 		      } ?>
+				    </div>
 
 					</ul>
 				</div>
@@ -134,6 +129,8 @@ class ThirteenTemplate extends QuickTemplate {
 				<h5><?php $this->msg('personaltools') ?></h5>
 				<div class="pBody">
 					<ul<?php $this->html('userlangattributes') ?>>
+					<li id="togglePersonal"><a href="#">toggle personal tools</a></li>
+					<div id="personalTools">
 					<?php foreach($this->data['personal_urls'] as $key => $item) {  ?>
 						<li id="<?php echo Sanitizer::escapeId( "pt-$key" ) ?>"<?php
 						if ($item['active']) { ?> class="active"<?php } ?>><a href="<?php
@@ -142,6 +139,7 @@ class ThirteenTemplate extends QuickTemplate {
 						echo htmlspecialchars($item['class']) ?>"<?php } ?>><?php
 						echo htmlspecialchars($item['text']) ?></a></li>
 							  <?php } ?>
+					</div>
 					</ul>
 				</div>
 			</div>
@@ -178,6 +176,16 @@ class ThirteenTemplate extends QuickTemplate {
 		-->
 		<?php endif; ?>
 </body>
+
+<script type="text/javascript">
+$("#toggleActions").click(function () {
+$("#actions").toggle();
+});
+
+$("#togglePersonal").click(function () {
+$("#personalTools").toggle();
+});
+</script>
 </html>
 <?php
 	wfRestoreWarnings();
