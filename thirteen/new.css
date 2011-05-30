@@ -1,10 +1,10 @@
 body{
     font-family: Verdana, Arial, Helvetica, sans-serif;
     -webkit-text-size-adjust: 100%;
+
 }
 
 #globalWrapper{
-
 }
 
 /* Header */
@@ -14,8 +14,9 @@ body{
 }
 
 #p-search{
- padding: 1em;
- width: 25em;
+    padding: 1em;
+    display:inline-block;
+/* margin-left: 4em; */
 }
 
 #p-search h5{
@@ -26,7 +27,9 @@ body{
 /* Main Content */
 
 #column-content{
-
+    border: 1px solid #aaa;
+    padding: 1em;
+    border-radius: 15px;
 }
 
 #siteSub{
@@ -34,12 +37,47 @@ body{
     display: none;
 }
 
-/*Portlets (ie: personal tools, views) */
+/* Code for display pre / code tags */
+
+code {
+	background-color: #f9f9f9;
+}
+pre {
+	padding: 1em;
+	border: 1px dashed #2f6fab;
+	color: black;
+	background-color: #f9f9f9;
+	line-height: 1.1em;
+}
+
+
+/* hide the retrieved from text */
+.printfooter{
+    display: none;
+}
+
+html {
+  font-size: 0.8em; }
+
+/*modifies the edit button */
+.editsection{
+    float:right;
+    font-weight: normal;
+    font-size:16px;
+}
+
+/*underline headings */
+h1, h2, h3, h4, h5, h5{
+    border-bottom: 1px solid #aaa;
+}
+
+/* = Portlets (ie: personal tools, views) = */
 
 .portlet{
     border: 1px solid #818CA5;
     background-color: #ccffcc;
     margin: 1em;
+    border-radius: 5px;
     /* list-style: none; */
 }
 
@@ -64,11 +102,13 @@ body{
 	border-color: #fabd23;
 	font-weight: bold;
 }
-.portlet li a {
+.portlet li a{
 	color: #002bb8;
 	text-decoration: none;
 	display: block;
 	height:2em;
+	padding-top:0.5em;
+	text-transform: lowercase;
 }
 
 .portlet li a:hover{
@@ -80,37 +120,29 @@ body{
 	color: #ba0000;
 }
 
-.portlet li a {
-	text-transform: lowercase;
-}
-
-
-/* Code for display pre / code tags */
-
-code {
-	background-color: #f9f9f9;
-}
-pre {
-	padding: 1em;
-	border: 1px dashed #2f6fab;
-	color: black;
-	background-color: #f9f9f9;
-	line-height: 1.1em;
-}
-
-
-/* hide the retrieved from text */
-.printfooter{
-    display: none;
-}
-
-html {
-  font-size: 0.8em; }
-
-.hidden{
-    display: none;
-}
-
 #actions, #personalTools{
     display: none;
+}
+
+/* = Edit Page Styles = */
+
+/* This makes the text area when editing articles the correct size */
+textarea{;
+    width:100%;
+}
+
+#wpSummary{
+    width:100%;
+}
+
+#wpSave, #wpPreview, #wpDiff{
+    height: 3em;
+    width: 100%;
+    margin-bottom: 0.5em;
+}
+
+/* = Footer Styles = */
+
+#siteInfo{
+    text-align: center;
 }

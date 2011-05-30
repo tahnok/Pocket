@@ -45,7 +45,7 @@ class ThirteenTemplate extends QuickTemplate {
 	 */
 	function execute() {
 		global $wgRequest;
-
+		global $wgUser;
 		$this->skin = $skin = $this->data['skin'];
 		$action = $wgRequest->getText( 'action' );
 
@@ -59,10 +59,12 @@ class ThirteenTemplate extends QuickTemplate {
 <script src="<?php $this->text('stylepath' ) ?>/thirteen/jquery.js"></script>
 	<div id="globalWrapper">
 	   <div id="header">
+
+<!--<img id="logo" alt="logo" src="<?php $this->text('stylepath') ?>/thirteen/logo.png"/>--!>
 	   <?php
 	   $this->searchBox();
 		?>
-
+   </div>
 	  
 		<div id="column-content">
 			<div id="content" <?php $this->html("specialpageattributes") ?>>
@@ -95,7 +97,7 @@ class ThirteenTemplate extends QuickTemplate {
 	      <h5><?php $this->msg('views') ?></h5>
 				<div class="pBody">
 					<ul>
-				    <li id="toggleActions"><a href="#">Toggle Actions</a></li>
+				    <li id="toggleActions"><a href="#" onclick="return false">Menu</a></li>
 				    <div id="actions">
 				    <?php
 					foreach($this->data['content_actions'] as $key => $tab) {
@@ -129,8 +131,11 @@ class ThirteenTemplate extends QuickTemplate {
 				<h5><?php $this->msg('personaltools') ?></h5>
 				<div class="pBody">
 					<ul<?php $this->html('userlangattributes') ?>>
-					<li id="togglePersonal"><a href="#">toggle personal tools</a></li>
-					<div id="personalTools">
+					<?php if($wgUser->isLoggedIn()){ //  * Toggle buttons shouldn't display if there is only 1 item (ie the user is not logged in yet)
+		  ?>
+		                          <li id="togglePersonal"><a href="#"  onclick="return false">Tools</a></li>
+					  <div id="personalTools">
+		                        <?php } ?>
 					<?php foreach($this->data['personal_urls'] as $key => $item) {  ?>
 						<li id="<?php echo Sanitizer::escapeId( "pt-$key" ) ?>"<?php
 						if ($item['active']) { ?> class="active"<?php } ?>><a href="<?php
@@ -139,7 +144,9 @@ class ThirteenTemplate extends QuickTemplate {
 						echo htmlspecialchars($item['class']) ?>"<?php } ?>><?php
 						echo htmlspecialchars($item['text']) ?></a></li>
 							  <?php } ?>
-					</div>
+                                        <?php if($wgUser->isLoggedIn()){ ?>
+					  </div>
+                                        <?php } ?>
 					</ul>
 				</div>
 			</div>
@@ -163,6 +170,9 @@ class ThirteenTemplate extends QuickTemplate {
 					}
 				}
 			*/?>
+		</div>
+		<div id="siteInfo">
+  For Copyright, FAQ, etc... see <a href="HAPPY PLACE">MobileAbout</a>
 		</div>
 		<!-- end of the left (by default at least) column -->
 	</div>
@@ -196,10 +206,11 @@ $("#personalTools").toggle();
 		global $wgUseTwoButtonsSearchForm;
 ?>
 	<div id="p-search" class="portlet">
+
 		<h5><label for="searchInput"><?php $this->msg('search') ?></label></h5>
 		<div id="searchBody" class="pBody">
-						
-			<form action="<?php $this->text('wgScript') ?>" id="searchform">
+	       				
+			<form action="<?php $this->text('wgScript') ?>" id="searchform"'>
 				<input type='hidden' name="title" value="<?php $this->text('searchtitle') ?>"/>
 				<?php
 		echo Html::input( 'search',
@@ -207,12 +218,13 @@ $("#personalTools").toggle();
 			array(
 				'id' => 'searchInput',
 				'title' => $this->skin->titleAttrib( 'search' ),
-				'accesskey' => $this->skin->accesskey( 'search' )
+				'accesskey' => $this->skin->accesskey( 'search' ),
+				'size' => '15'
 			) ); ?>
 
 				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="<?php $this->msg('searcharticle') ?>"<?php echo $this->skin->tooltipAndAccesskey( 'search-go' ); ?> /><?php if ($wgUseTwoButtonsSearchForm) { ?>&nbsp;
-				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="<?php $this->msg('searchbutton') ?>"<?php echo $this->skin->tooltipAndAccesskey( 'search-fulltext' ); ?> /><?php } else { ?>
-
+				<?php } else { ?>
+		     
 				<div><a href="<?php $this->text('searchaction') ?>" rel="search"><?php $this->msg('powersearch-legend') ?></a></div><?php } ?>
 
 			</form>

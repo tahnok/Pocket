@@ -1,7 +1,20 @@
+= Thirteen =
 Mobile Skin for MediaWiki
 
+author: Wesley Ellis
+
 TODO:
+ * Skin edit section
+ * skin preferences
 
 BUGS:
- * clicking on the toggle buttons takes you to the top of the page
- * Toggle buttons shouldn't display if there is only 1 item (ie the user is not logged in yet)
+ * Page is wrong size on first load with droid
+
+== Setup: ==
+
+setting the logo:
+	place 35px x 35px png image named logo into the thirteen folder.
+
+== License ==
+
+This code is released under GPLv3. See the file named copying for the full license
