@@ -4,16 +4,25 @@ Mobile Skin for MediaWiki
 author: Wesley Ellis
 
 TODO:
- * Skin edit section
  * skin preferences
+ * Mobile editor?
+ * Search
+ * better buttons
+ * Logo
+ * TOC collapse automatically
+ * TOC styling
 
 BUGS:
  * Page is wrong size on first load with droid
+ * Rich Text buttons do not work
 
 == Setup: ==
 
 setting the logo:
-	place 35px x 35px png image named logo into the thirteen folder.
+	place 48px x 48px png image named logo into the thirteen folder.
+
+Mobile About Page:
+       There is a link the footer to a page containing copyright, FAQ, etc... information that will point at $SiteName:MobileAbout . Please make sure it exists
 
 == License ==
 

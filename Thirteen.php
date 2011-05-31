@@ -59,12 +59,12 @@ class ThirteenTemplate extends QuickTemplate {
 <script src="<?php $this->text('stylepath' ) ?>/thirteen/jquery.js"></script>
 	<div id="globalWrapper">
 	   <div id="header">
+   
+   <img id="logo" alt="logo" src="<?php $this->text('stylepath') ?>/thirteen/logo.png"/>
 
-<!--<img id="logo" alt="logo" src="<?php $this->text('stylepath') ?>/thirteen/logo.png"/>--!>
-	   <?php
-	   $this->searchBox();
-		?>
-   </div>
+   <h1 id="sitename"><?php global $wgSitename; echo $wgSitename;?></h1>
+   <?php $this->searchBox(); ?>
+        </div>
 	  
 		<div id="column-content">
 			<div id="content" <?php $this->html("specialpageattributes") ?>>
@@ -172,7 +172,7 @@ class ThirteenTemplate extends QuickTemplate {
 			*/?>
 		</div>
 		<div id="siteInfo">
-  For Copyright, FAQ, etc... see <a href="HAPPY PLACE">MobileAbout</a>
+  For Copyright/FAQ/About see <?php global $wgSitename; echo $skin->link(Title::newFromText($wgSitename . ":Mobile About"), "About");?>
 		</div>
 		<!-- end of the left (by default at least) column -->
 	</div>
