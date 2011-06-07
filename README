@@ -11,9 +11,9 @@ TODO:
  * Logo
  * TOC collapse automatically
  * TOC styling
+ * switch jQUERY to google CDN
 
 BUGS:
- * Page is wrong size on first load with droid
  * Rich Text buttons do not work
 
 == Setup: ==
