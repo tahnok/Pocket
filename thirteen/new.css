@@ -15,9 +15,9 @@ body{
     padding: 1em;
     margin: 1em;
     border: 1px solid #aaa;
-    /* display: inline-block; */
-    /* border-bottom-left-radius: 20px; */
-    /* border-bottom-right-radius: 20px; */
+/* display: inline-block; */
+/* border-bottom-left-radius: 20px; */
+/* border-bottom-right-radius: 20px; */
 }
 
 #header li{
@@ -64,14 +64,14 @@ body{
 /* Code for display pre / code tags */
 
 code {
-	background-color: #f9f9f9;
+    background-color: #f9f9f9;
 }
 pre {
-	padding: 1em;
-	border: 1px dashed #2f6fab;
-	color: black;
-	background-color: #f9f9f9;
-	line-height: 1.1em;
+    padding: 1em;
+    border: 1px dashed #2f6fab;
+    color: black;
+    background-color: #f9f9f9;
+    line-height: 1.1em;
 }
 
 
@@ -81,7 +81,7 @@ pre {
 }
 
 html {
-  font-size: 0.8em; }
+    font-size: 0.8em; }
 
 /*modifies the edit button */
 .editsection{
@@ -98,50 +98,50 @@ h1, h2, h3, h4, h5, h5{
 /* = Portlets (ie: personal tools, views) = */
 
 .portlet{
-    /* border: 1px solid #818CA5; */
-    /* background-color: #ccffcc; */
-    /* margin: 1em; */
-    /* border-radius: 5px; */
-    /* list-style: none; */
+/* border: 1px solid #818CA5; */
+/* background-color: #ccffcc; */
+/* margin: 1em; */
+/* border-radius: 5px; */
+/* list-style: none; */
 }
 
 .portlet h5{
-	display:none;
+    display:none;
 }
 
 .portlet ul {
-	list-style: none;
-	margin: 1em;
-	padding: 0;
+    list-style: none;
+    margin: 1em;
+    padding: 0;
 }
 
 .portlet li {
-	border: 1px solid #aaa;
-	background-color: #ccffcc;
-	text-align: center;
-	white-space: nowrap;
-	margin-bottom: 0.5em;
+    border: 1px solid #aaa;
+    background-color: #ccffcc;
+    text-align: center;
+    white-space: nowrap;
+    margin-bottom: 0.5em;
 }
 .portlet li.selected {
-	border-color: #fabd23;
-	font-weight: bold;
+    border-color: #fabd23;
+    font-weight: bold;
 }
 .portlet li a{
-	color: #002bb8;
-	text-decoration: none;
-	display: block;
-	height:2em;
-	padding-top:0.5em;
-	text-transform: lowercase;
+    color: #002bb8;
+    text-decoration: none;
+    display: block;
+    height:2em;
+    padding-top:0.5em;
+    text-transform: lowercase;
 }
 
 .portlet li a:hover{
     background-color: #DBF1F9;
-   
+    
 }
 
 .portlet .new a {
-	color: #ba0000;
+    color: #ba0000;
 }
 
 #actions, #personalTools{
@@ -152,8 +152,8 @@ h1, h2, h3, h4, h5, h5{
 
 /* This makes the text area when editing articles the correct size */
 textarea{;
-    width:100%;
-}
+	 width:100%;
+	}
 
 #wpSummary{
     width:100%;
