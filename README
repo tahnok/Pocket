@@ -19,7 +19,7 @@ BUGS:
 == Setup: ==
 
 setting the logo:
-	place 48px x 48px png image named logo into the thirteen folder.
+	place 40px x 200px png banner for your site in the folder
 
 Mobile About Page:
        There is a link the footer to a page containing copyright, FAQ, etc... information that will point at $SiteName:MobileAbout . Please make sure it exists

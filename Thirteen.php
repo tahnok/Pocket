@@ -59,10 +59,9 @@ class ThirteenTemplate extends QuickTemplate {
        <script src="<?php $this->text('stylepath' ) ?>/thirteen/jquery.js"></script>
        <div id="globalWrapper">
            <div id="header">
-               <img id="logo" alt="logo" src="<?php $this->text('stylepath') ?>/thirteen/logo.png"/>
-               <h1 id="sitename"><?php global $wgSitename; echo $wgSitename;?></h1>
-           <?php $this->searchBox(); ?>
+               <img id="logo" alt="logo" src="<?php $this->text('stylepath') ?>/thirteen/banner.png"/>
            </div>
+	   </div>
            <div id="column-content">
                <div id="content" <?php $this->html("specialpageattributes") ?>>
                    <a id="top"></a>
@@ -88,6 +87,7 @@ class ThirteenTemplate extends QuickTemplate {
            <!-- End Content Div -->
            <!--Begin Sidebar / bottom bar stuff -->
            <div id="column-one"<?php $this->html('userlangattributes')  ?>>
+	       <?php $this->searchBox(); ?>               
                <div id="p-cactions" class="portlet">
                    <h5><?php $this->msg('views') ?></h5>
                    <div class="pBody">
