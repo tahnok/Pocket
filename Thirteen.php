@@ -59,7 +59,9 @@ class ThirteenTemplate extends QuickTemplate {
        <script src="<?php $this->text('stylepath' ) ?>/thirteen/jquery.js"></script>
        <div id="globalWrapper">
            <div id="header">
-               <img id="logo" alt="logo" src="<?php $this->text('stylepath') ?>/thirteen/banner.png"/>
+	       <a href="<?php echo htmlspecialchars($this->data['nav_urls']['mainpage']['href'])?>">
+                   <img id="logo" alt="logo" src="<?php $this->text('stylepath') ?>/thirteen/banner.png"/>
+	       </a>
            </div>
 	   </div>
            <div id="column-content">
@@ -92,7 +94,7 @@ class ThirteenTemplate extends QuickTemplate {
                    <h5><?php $this->msg('views') ?></h5>
                    <div class="pBody">
                        <ul>
-                           <li id="toggleActions"><a href="#" onclick="return false">Menu</a></li>
+                           <li id="toggleActions"><a href="#" onclick="javascript:return false">Menu</a></li>
                            <div id="actions">
                                <?php
                                    foreach($this->data['content_actions'] as $key => $tab) {
@@ -125,7 +127,7 @@ class ThirteenTemplate extends QuickTemplate {
                        <ul<?php $this->html('userlangattributes') ?>>
                            <?php if($wgUser->isLoggedIn()){ //  * Toggle buttons shouldn't display if there is only 1 item (ie the user is not logged in yet)
                                ?>
-                               <li id="togglePersonal"><a href="#"  onclick="return false">Tools</a></li>
+                               <li id="togglePersonal"><a href="#"  onclick="javascript:return false">Tools</a></li>
                                <div id="personalTools">
                            <?php } ?>
                            <?php foreach($this->data['personal_urls'] as $key => $item) {  ?>

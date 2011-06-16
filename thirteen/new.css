@@ -144,15 +144,14 @@ h1, h2, h3, h4, h5, h5{
     font-weight: bold;
 }
 .portlet li a{
-    color: #002bb8;
-    text-decoration: none;
+    color: black;
     display: block;
     height:2em;
     padding-top:0.5em;
 }
 
 .portlet li a:hover{
-    background-color: #DBF1F9;
+    background-color: #D1FDD1;
     
 }
 

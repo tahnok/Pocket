@@ -8,10 +8,10 @@ TODO:
  * Mobile editor?
  * Search
  * better buttons
- * Logo
  * TOC collapse automatically
  * TOC styling
  * switch jQUERY to google CDN
+ * Banner should be clickable
 
 BUGS:
  * Rich Text buttons do not work
