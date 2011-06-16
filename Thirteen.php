@@ -94,7 +94,7 @@ class ThirteenTemplate extends QuickTemplate {
                    <h5><?php $this->msg('views') ?></h5>
                    <div class="pBody">
                        <ul>
-                           <li id="toggleActions"><a href="#" onclick="javascript:return false">Menu</a></li>
+                           <li id="toggleActions"><a id="ta-link" href="#" onclick="javascript:return false">Menu [+]</a></li>
                            <div id="actions">
                                <?php
                                    foreach($this->data['content_actions'] as $key => $tab) {
@@ -127,7 +127,7 @@ class ThirteenTemplate extends QuickTemplate {
                        <ul<?php $this->html('userlangattributes') ?>>
                            <?php if($wgUser->isLoggedIn()){ //  * Toggle buttons shouldn't display if there is only 1 item (ie the user is not logged in yet)
                                ?>
-                               <li id="togglePersonal"><a href="#"  onclick="javascript:return false">Tools</a></li>
+                               <li id="togglePersonal"><a href="#" id="tp-link"  onclick="javascript:return false">Tools [+]</a></li>
                                <div id="personalTools">
                            <?php } ?>
                            <?php foreach($this->data['personal_urls'] as $key => $item) {  ?>
@@ -163,11 +163,25 @@ class ThirteenTemplate extends QuickTemplate {
 
        <script type="text/javascript">
            $("#toggleActions").click(function () {
+	       var foo = document.getElementById("ta-link");
+	       if( foo.innerHTML == "Menu [+]"){
+		 foo.innerHTML = "Menu [-]";
+	       }
+	       else{
+		 foo.innerHTML = "Menu [+]";
+	       }
                $("#actions").toggle();
              });
 
            $("#togglePersonal").click(function () {
                $("#personalTools").toggle();
+               var foo = document.getElementById("tp-link");
+	       if( foo.innerHTML == "Tools [+]"){
+		 foo.innerHTML = "Tools [-]";
+	       }
+	       else{
+		 foo.innerHTML = "Tools [+]";
+	       }
              });
        </script>
     </html>
