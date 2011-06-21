@@ -25,7 +25,9 @@ class SkinThirteen extends SkinTemplate {
     // $out->addStyle( 'thirteen/appropedia.css', 'screen');
     // $out->addStyle( 'thirteen/mobile.css', 'screen');
     $out->addStyle( 'thirteen/new.css', 'screen');
-
+    //ensure screen is correct width on mobile devices"
+    $out->addMeta( "viewport", "width = device-width");
+    //$out->addScript( '<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>');
   }
 }
 
@@ -51,12 +53,8 @@ class ThirteenTemplate extends QuickTemplate {
 
     // Suppress warnings to prevent notices about missing indexes in $this->data
     wfSuppressWarnings();
-
     $this->html( 'headelement' );
     ?>
-       <!--Must move this to <head> at some point. It fixes the width on mobile screens --!>
-       <meta name="viewport" content="width = device-width">
-       <script src="<?php $this->text('stylepath' ) ?>/thirteen/jquery.js"></script>
        <div id="globalWrapper">
            <div id="header">
 	       <a href="<?php echo htmlspecialchars($this->data['nav_urls']['mainpage']['href'])?>">
@@ -164,7 +162,7 @@ class ThirteenTemplate extends QuickTemplate {
        </body>
 
        <script type="text/javascript">
-           $("#toggleActions").click(function () {
+           $j("#toggleActions").click(function () {
 	       var foo = document.getElementById("ta-link");
 	       if( foo.innerHTML == "Menu [+]"){
 		 foo.innerHTML = "Menu [-]";
@@ -172,11 +170,11 @@ class ThirteenTemplate extends QuickTemplate {
 	       else{
 		 foo.innerHTML = "Menu [+]";
 	       }
-               $("#actions").toggle();
+               $j("#actions").toggle();
              });
 
-           $("#togglePersonal").click(function () {
-               $("#personalTools").toggle();
+           $j("#togglePersonal").click(function () {
+               $j("#personalTools").toggle();
                var foo = document.getElementById("tp-link");
 	       if( foo.innerHTML == "Tools [+]"){
 		 foo.innerHTML = "Tools [-]";
