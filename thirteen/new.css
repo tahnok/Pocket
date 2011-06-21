@@ -98,9 +98,13 @@ h1, h2, h3, h4, h5, h5{
 
 
 #p-search{
-    border: 1px solid;
-    padding: 0.5em;
-    margin: 1em;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    padding: 1em;
+    padding-bottom: 0em;
+    margin: 0em 1em;
+    /* display:inline-block; */
+    background-color: white;
 }
 
 

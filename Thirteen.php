@@ -64,6 +64,8 @@ class ThirteenTemplate extends QuickTemplate {
 	       </a>
            </div>
 	   </div>
+
+	       <?php $this->searchBox(); ?>
            <div id="column-content">
                <div id="content" <?php $this->html("specialpageattributes") ?>>
                    <a id="top"></a>
@@ -89,7 +91,7 @@ class ThirteenTemplate extends QuickTemplate {
            <!-- End Content Div -->
            <!--Begin Sidebar / bottom bar stuff -->
            <div id="column-one"<?php $this->html('userlangattributes')  ?>>
-	       <?php $this->searchBox(); ?>               
+	                      
                <div id="p-cactions" class="portlet">
                    <h5><?php $this->msg('views') ?></h5>
                    <div class="pBody">
@@ -205,7 +207,7 @@ class ThirteenTemplate extends QuickTemplate {
                                 'id' => 'searchInput',
                                 'title' => $this->skin->titleAttrib( 'search' ),
                                 'accesskey' => $this->skin->accesskey( 'search' ),
-                                'size' => '28'
+                                'size' => '20'
                     ) ); ?>
                     <input type='submit' name="go" class="searchButton" id="searchGoButton" value="Search"<?php echo $this->skin->tooltipAndAccesskey( 'search-go' ); ?> /><?php if ($wgUseTwoButtonsSearchForm) { ?>&nbsp;
                     <?php } else { ?>
