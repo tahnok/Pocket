@@ -62,8 +62,7 @@ class ThirteenTemplate extends QuickTemplate {
 	       </a>
            </div>
 	   </div>
-
-	       <?php $this->searchBox(); ?>
+	   <?php $this->searchBox(); ?>
            <div id="column-content">
                <div id="content" <?php $this->html("specialpageattributes") ?>>
                    <a id="top"></a>
