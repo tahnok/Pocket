@@ -9,7 +9,6 @@ if( !defined( 'MEDIAWIKI' ) )
 
 /**
  * Inherit main code from SkinTemplate, set the CSS and template filter.
-
  */
 class SkinThirteen extends SkinTemplate {
   /** Using thirteen. */
@@ -17,24 +16,13 @@ class SkinThirteen extends SkinTemplate {
     $template = 'ThirteenTemplate', $useHeadElement = true;
 
   function setupSkinUserCss( OutputPage $out ) {
-    global $wgHandheldStyle;
 
-    // Append to the default screen common & print styles...
-    // $out->addStyle( 'thirteen/main.css', 'screen' );
-    // $out->addStyle( 'thirteen/shared.css', 'screen' );
-    // $out->addStyle( 'thirteen/appropedia.css', 'screen');
-    // $out->addStyle( 'thirteen/mobile.css', 'screen');
     $out->addStyle( 'thirteen/new.css', 'screen');
     //ensure screen is correct width on mobile devices"
     $out->addMeta( "viewport", "width = device-width");
-    //$out->addScript( '<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>');
   }
 }
 
-/**
- * @todo document
- * @ingroup Skins
- */
 class ThirteenTemplate extends QuickTemplate {
   var $skin;
   /**
@@ -271,25 +259,6 @@ class ThirteenTemplate extends QuickTemplate {
           </div>
       </div>
       <?php
-  }
-
-  /*************************************************************************************************/
-  function languageBox() {
-      if( $this->data['language_urls'] ) {
-          ?>
-          <div id="p-lang" class="portlet">
-              <h5<?php $this->html('userlangattributes') ?>><?php $this->msg('otherlanguages') ?></h5>
-              <div class="pBody">
-                  <ul>
-                      <?php foreach($this->data['language_urls'] as $langlink) { ?>
-                          <li class="<?php echo htmlspecialchars($langlink['class'])?>"><?php
-                          ?><a href="<?php echo htmlspecialchars($langlink['href']) ?>"><?php echo $langlink['text'] ?></a></li>
-                      <?php } ?>
-                  </ul>
-              </div>
-          </div>
-      <?php
-      }
   }
 
   /*************************************************************************************************/
