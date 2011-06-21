@@ -205,9 +205,9 @@ class ThirteenTemplate extends QuickTemplate {
                                 'id' => 'searchInput',
                                 'title' => $this->skin->titleAttrib( 'search' ),
                                 'accesskey' => $this->skin->accesskey( 'search' ),
-                                'size' => '15'
+                                'size' => '28'
                     ) ); ?>
-                    <input type='submit' name="go" class="searchButton" id="searchGoButton" value="<?php $this->msg('searcharticle') ?>"<?php echo $this->skin->tooltipAndAccesskey( 'search-go' ); ?> /><?php if ($wgUseTwoButtonsSearchForm) { ?>&nbsp;
+                    <input type='submit' name="go" class="searchButton" id="searchGoButton" value="Search"<?php echo $this->skin->tooltipAndAccesskey( 'search-go' ); ?> /><?php if ($wgUseTwoButtonsSearchForm) { ?>&nbsp;
                     <?php } else { ?>
                         <div><a href="<?php $this->text('searchaction') ?>" rel="search"><?php $this->msg('powersearch-legend') ?></a></div><?php } ?>
                 </form>
