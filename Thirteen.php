@@ -36,6 +36,7 @@ class ThirteenTemplate extends QuickTemplate {
   function execute() {
     global $wgRequest;
     global $wgUser;
+
     $this->skin = $skin = $this->data['skin'];
     $action = $wgRequest->getText( 'action' );
 
@@ -130,6 +131,19 @@ class ThirteenTemplate extends QuickTemplate {
                            <?php } ?>
                        </ul>
                    </div>
+		   <div class = "portlet">
+		       <?php
+    $sidebar = $this->data['sidebar'];
+    if ( !isset( $sidebar['SEARCH'] ) ) $sidebar['SEARCH'] = true;
+    if ( !isset( $sidebar['TOOLBOX'] ) ) $sidebar['TOOLBOX'] = true;
+    if ( !isset( $sidebar['LANGUAGES'] ) ) $sidebar['LANGUAGES'] = true;
+    foreach ($sidebar as $boxName => $cont){
+
+	$this->customBox( $boxName, $cont );
+      
+    }
+?>
+</div>
                </div>
                <script type="<?php $this->text('jsmimetype') ?>"> if (window.isMSIE55) fixalpha(); </script>
            </div>
@@ -284,6 +298,7 @@ class ThirteenTemplate extends QuickTemplate {
       </div>
       <?php
   }
+
 } // end of class
 
 
