@@ -32,6 +32,14 @@ body{
     display:block;
 }
 
+#jumpto{
+    text-align:center;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    background-color: white;
+    margin: 0em 1em;
+}
+
 /* Main Content */
 
 #column-content{
@@ -136,8 +144,9 @@ h1, h2, h3, h4, h5, h5{
     color: #ba0000;
 }
 
-#actions, #personalTools{
+.menu{
     display: none;
+    padding: 0em 2em;
 }
 
 /* = Edit Page Styles = */

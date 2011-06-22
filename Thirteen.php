@@ -52,6 +52,9 @@ class ThirteenTemplate extends QuickTemplate {
            </div>
 	   </div>
 	   <?php $this->searchBox(); ?>
+	   <div id="jumpto">
+	       <a href="#Menus">Jump to Menu</a>
+           </div>
            <div id="column-content">
                <div id="content" <?php $this->html("specialpageattributes") ?>>
                    <a id="top"></a>
@@ -82,8 +85,8 @@ class ThirteenTemplate extends QuickTemplate {
                    <h5><?php $this->msg('views') ?></h5>
                    <div class="pBody">
                        <ul>
-                           <li id="toggleActions"><a id="ta-link" href="#" onclick="javascript:return false">Menu [+]</a></li>
-                           <div id="actions">
+                           <li id="toggleActions"><a id="ta-link" href="#" onclick="javascript:return false" name="Menus">Menu [+]</a></li>
+                           <div id="actions" class="menu">
                                <?php
                                    foreach($this->data['content_actions'] as $key => $tab) {
                                        echo '<li id="' . Sanitizer::escapeId( "ca-$key" ) . '"';
@@ -116,7 +119,7 @@ class ThirteenTemplate extends QuickTemplate {
                            <?php if($wgUser->isLoggedIn()){ //  * Toggle buttons shouldn't display if there is only 1 item (ie the user is not logged in yet)
                                ?>
                                <li id="togglePersonal"><a href="#" id="tp-link"  onclick="javascript:return false">Tools [+]</a></li>
-                               <div id="personalTools">
+                               <div id="personalTools" class="menu">
                            <?php } ?>
                            <?php foreach($this->data['personal_urls'] as $key => $item) {  ?>
                                <li id="<?php echo Sanitizer::escapeId( "pt-$key" ) ?>"<?php
@@ -138,9 +141,9 @@ class ThirteenTemplate extends QuickTemplate {
     if ( !isset( $sidebar['TOOLBOX'] ) ) $sidebar['TOOLBOX'] = true;
     if ( !isset( $sidebar['LANGUAGES'] ) ) $sidebar['LANGUAGES'] = true;
     foreach ($sidebar as $boxName => $cont){
-
+      if($boxName == 'Topics & areas'){
 	$this->customBox( $boxName, $cont );
-      
+      }
     }
 ?>
 </div>
@@ -184,6 +187,16 @@ class ThirteenTemplate extends QuickTemplate {
 		 foo.innerHTML = "Tools [+]";
 	       }
              });
+	     $j("#toggleExplore").click(function() {
+		 $j("#explore").toggle();
+               var foo = document.getElementById("te-link");
+	       if( foo.innerHTML == "Explore [+]"){
+		 foo.innerHTML = "Explore [-]";
+	       }
+	       else{
+		 foo.innerHTML = "Explore [+]";
+	       }
+	       });
        </script>
     </html>
     <?php
@@ -283,11 +296,15 @@ class ThirteenTemplate extends QuickTemplate {
           <div class='pBody'>
               <?php if ( is_array( $cont ) ) { ?>
                   <ul>
+                       <li id="toggleExplore"><a href="#" id="te-link" onclick="javascript:return false">Explore [+]</a></li>
+<div id="explore" class="menu">
                        <?php foreach($cont as $key => $val) { ?>
                            <li id="<?php echo Sanitizer::escapeId($val['id']) ?>"<?php
                                if ( $val['active'] ) { ?> class="active" <?php }
                                    ?>><a href="<?php echo htmlspecialchars($val['href']) ?>"<?php echo $this->skin->tooltipAndAccesskey($val['id']) ?>><?php echo htmlspecialchars($val['text']) ?></a></li>
                       <?php } ?>
+<li><?php echo $this->skin->link(Title::newFromText("Special:Random"), "Random Page");?></li>
+</div>
                   </ul>
               <?php   } else {
                   # allow raw HTML block to be defined by extensions
