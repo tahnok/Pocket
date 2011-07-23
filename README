@@ -1,13 +1,13 @@
 = Thirteen =
 Mobile Skin for MediaWiki
 
-Author: Wesley Ellis
+Author: Wesley Ellis (tahnok@gmail.com)
 
 Required Version: Mediawiki v1.16
 
 TODO:
  * skin preferences
- * Mobile editor?
+ * mobile editor?
  * better buttons
  * TOC collapse automatically
  * TOC styling

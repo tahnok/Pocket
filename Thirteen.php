@@ -17,7 +17,7 @@ class SkinThirteen extends SkinTemplate {
 
   function setupSkinUserCss( OutputPage $out ) {
 
-    $out->addStyle( 'thirteen/new.css', 'screen');
+    $out->addStyle( 'thirteen/main.css', 'screen');
     //ensure screen is correct width on mobile devices"
     $out->addMeta( "viewport", "width = device-width");
   }
@@ -85,7 +85,7 @@ class ThirteenTemplate extends QuickTemplate {
                    <h5><?php $this->msg('views') ?></h5>
                    <div class="pBody">
                        <ul>
-                           <li id="toggleActions"><a id="ta-link" href="#" onclick="javascript:return false" name="Menus">Menu [+]</a></li>
+                           <li id="toggleActions"><a id="ta-link" href="#" onclick="javascript:return false" name="Menus">Page Menu [+]</a></li>
                            <div id="actions" class="menu">
                                <?php
                                    foreach($this->data['content_actions'] as $key => $tab) {
