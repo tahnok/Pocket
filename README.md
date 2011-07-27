@@ -22,22 +22,27 @@ BUGS:
 
 ### Enabling jQuery: ###
 Add the following to your LocalSettings.php:
-```// Include jQuery
+
+```
+// Include jQuery
 function wfIncludeJQuery() {
 global $wgOut;
 $wgOut->includeJQuery();
 }
-$wgExtensionFunctions[] = 'wfIncludeJQuery';```
+$wgExtensionFunctions[] = 'wfIncludeJQuery';
+```
 
 ### Automatic Mobile Skin: ###
 If you'd like for this skin to be enabled automatically when a user visits the site using a mobile device (including Android, iPhone/iPad and Blackberries) please add the following to LocalSettings.php
 
-```# to set default skin for mobile devices
+```
+# to set default skin for mobile devices
 $ua=$_SERVER["HTTP_USER_AGENT"];
 
 if(stristr($ua,"Mobile")||stristr($ua,"iPad")||stristr($ua,"iPhone")||stristr($ua,"iPod")||stristr($ua,"BlackBerry")||stristr($ua,"Opera Mini")||stristr($ua,"Opera Mobile")||stistr($ua, "Opera Mobi")||stristr($ua,"Nokia")){
   $wgDefaultSkin = "thirteen";
-}```
+}
+```
 
 ### Setting the logo: ###
 place 40px x 200px png banner for your site in the folder and call it banner.png
