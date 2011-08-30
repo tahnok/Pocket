@@ -140,11 +140,6 @@ class ThirteenTemplate extends QuickTemplate {
     if ( !isset( $sidebar['SEARCH'] ) ) $sidebar['SEARCH'] = true;
     if ( !isset( $sidebar['TOOLBOX'] ) ) $sidebar['TOOLBOX'] = true;
     if ( !isset( $sidebar['LANGUAGES'] ) ) $sidebar['LANGUAGES'] = true;
-    foreach ($sidebar as $boxName => $cont){
-      if($boxName == 'Topics & areas'){
-	$this->customBox( $boxName, $cont );
-      }
-    }
 ?>
 </div>
                </div>
@@ -283,34 +278,6 @@ class ThirteenTemplate extends QuickTemplate {
                   wfRunHooks( 'SkinTemplateToolboxEnd', array( &$this ) );
                   ?>
               </ul>
-          </div>
-      </div>
-      <?php
-  }
-
-  /*************************************************************************************************/
-  function customBox( $bar, $cont ) {
-      ?>
-      <div class='generated-sidebar portlet' id='<?php echo Sanitizer::escapeId( "p-$bar" ) ?>'<?php echo $this->skin->tooltip('p-'.$bar) ?>>
-          <h5><?php $out = wfMsg( $bar ); if (wfEmptyMsg($bar, $out)) echo htmlspecialchars($bar); else echo htmlspecialchars($out); ?></h5>
-          <div class='pBody'>
-              <?php if ( is_array( $cont ) ) { ?>
-                  <ul>
-                       <li id="toggleExplore"><a href="#" id="te-link" onclick="javascript:return false">Explore [+]</a></li>
-<div id="explore" class="menu">
-                       <?php foreach($cont as $key => $val) { ?>
-                           <li id="<?php echo Sanitizer::escapeId($val['id']) ?>"<?php
-                               if ( $val['active'] ) { ?> class="active" <?php }
-                                   ?>><a href="<?php echo htmlspecialchars($val['href']) ?>"<?php echo $this->skin->tooltipAndAccesskey($val['id']) ?>><?php echo htmlspecialchars($val['text']) ?></a></li>
-                      <?php } ?>
-<li><?php echo $this->skin->link(Title::newFromText("Special:Random"), "Random Page");?></li>
-</div>
-                  </ul>
-              <?php   } else {
-                  # allow raw HTML block to be defined by extensions
-                 print $cont;
-              }
-              ?>
           </div>
       </div>
       <?php

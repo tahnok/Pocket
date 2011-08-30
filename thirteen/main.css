@@ -3,7 +3,6 @@ body{
     -webkit-text-size-adjust: 100%;
     margin:0;
     padding:0;
-    background-color: #D1FDD1;
 }
 
 /* == COLOURS == */
@@ -11,7 +10,7 @@ body{
 /* these elements should all have the same background color */
 
 #header, .portlet a, #p-search{
-    background-color: #5ECC5E;
+    background-color: #006699;
 }
 
 /* these elements need to have the same border color */
