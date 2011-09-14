@@ -10,13 +10,14 @@ body{
 /* these elements should all have the same background color */
 
 #header, .portlet a, #p-search{
-    background-color: #006699;
+    background-color: #DEDEDE;
 }
+
 
 /* these elements need to have the same border color */
 
-#header, #column-content, #p-search, .portlet li{
-    border-color: #4A4A4A !important;
+#header, #column-content, #p-search, .portlet li, #jumpto{
+    border-color: #c7c7c7 !important;
 }
 
 /* Header */
@@ -98,6 +99,7 @@ h1, h2, h3, h4, h5, h5{
     margin: 0em 1em;
     background-color: white;
     text-align:center;
+
 }
 
 #p-search h5{
@@ -133,7 +135,7 @@ h1, h2, h3, h4, h5, h5{
 }
 .portlet li a{
     text-decoration: none;
-    color: black;
+/*    color: black; */
     display: block;
     height:2em;
     padding-top:0.5em;
