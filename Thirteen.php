@@ -141,7 +141,7 @@ class ThirteenTemplate extends QuickTemplate {
     if ( !isset( $sidebar['TOOLBOX'] ) ) $sidebar['TOOLBOX'] = true;
     if ( !isset( $sidebar['LANGUAGES'] ) ) $sidebar['LANGUAGES'] = true;
     foreach ($sidebar as $boxName => $cont){
-      if($boxName == 'Topics & areas'){
+      if($boxName == 'Areas'){
 	$this->customBox( $boxName, $cont );
       }
     }
