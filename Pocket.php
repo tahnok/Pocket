@@ -167,11 +167,11 @@ class PocketTemplate extends QuickTemplate {
        <script type="text/javascript">
            $j("#toggleActions").click(function () {
 	       var foo = document.getElementById("ta-link");
-	       if( foo.innerHTML == "Menu [+]"){
-		 foo.innerHTML = "Menu [-]";
+	       if( foo.innerHTML == "Page Menu [+]"){
+		 foo.innerHTML = "Page Menu [-]";
 	       }
 	       else{
-		 foo.innerHTML = "Menu [+]";
+		 foo.innerHTML = "Page Menu [+]";
 	       }
                $j("#actions").toggle();
              });
