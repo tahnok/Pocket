@@ -1,4 +1,4 @@
-# Thirteen #
+# Pocket #
 Mobile Skin for MediaWiki
 
 Author: Wesley Ellis (tahnok@gmail.com)
@@ -40,7 +40,7 @@ If you'd like for this skin to be enabled automatically when a user visits the s
 $ua=$_SERVER["HTTP_USER_AGENT"];
 
 if(stristr($ua,"Mobile")||stristr($ua,"iPad")||stristr($ua,"iPhone")||stristr($ua,"iPod")||stristr($ua,"BlackBerry")||stristr($ua,"Opera Mini")||stristr($ua,"Opera Mobile")||stistr($ua, "Opera Mobi")||stristr($ua,"Nokia")){
-  $wgDefaultSkin = "thirteen";
+  $wgDefaultSkin = "pocket";
 }
 ```
 
