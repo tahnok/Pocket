@@ -1,7 +1,7 @@
 <?php
   /**
-   * Thirteen nouveau
-   * Author:
+   * Pocket
+   * Author: Wesley Ellis
    */
 
 if( !defined( 'MEDIAWIKI' ) )
@@ -10,20 +10,20 @@ if( !defined( 'MEDIAWIKI' ) )
 /**
  * Inherit main code from SkinTemplate, set the CSS and template filter.
  */
-class SkinThirteen extends SkinTemplate {
-  /** Using thirteen. */
-  var $skinname = 'thirteen', $stylename = 'thirteen',
-    $template = 'ThirteenTemplate', $useHeadElement = true;
+class SkinPocket extends SkinTemplate {
+
+  var $skinname = 'pocket', $stylename = 'pocket',
+    $template = 'PocketTemplate', $useHeadElement = true;
 
   function setupSkinUserCss( OutputPage $out ) {
 
-    $out->addStyle( 'thirteen/main.css', 'screen');
+    $out->addStyle( 'Pocket/main.css', 'screen');
     //ensure screen is correct width on mobile devices"
     $out->addMeta( "viewport", "width = device-width");
   }
 }
 
-class ThirteenTemplate extends QuickTemplate {
+class PocketTemplate extends QuickTemplate {
   var $skin;
   /**
    * Template filter callback for Thirteen skin.
@@ -47,7 +47,7 @@ class ThirteenTemplate extends QuickTemplate {
        <div id="globalWrapper">
            <div id="header">
 	       <a href="<?php echo htmlspecialchars($this->data['nav_urls']['mainpage']['href'])?>">
-                   <img id="logo" alt="logo" src="<?php $this->text('stylepath') ?>/thirteen/banner.png"/>
+                   <img id="logo" alt="logo" src="<?php $this->text('stylepath') ?>/Pocket/banner.png"/>
 	       </a>
            </div>
 	   </div>
@@ -274,7 +274,7 @@ class ThirteenTemplate extends QuickTemplate {
                       <li id="t-ispermalink"<?php echo $this->skin->tooltip('t-ispermalink') ?>><?php $this->msg('permalink') ?></li><?php
                   }
 
-                  wfRunHooks( 'ThirteenTemplateToolboxEnd', array( &$this ) );
+                  wfRunHooks( 'PocketTemplateToolboxEnd', array( &$this ) );
                   wfRunHooks( 'SkinTemplateToolboxEnd', array( &$this ) );
                   ?>
               </ul>
