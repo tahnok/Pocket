@@ -1,4 +1,4 @@
-# Thirteen #
+# Pocket #
 Mobile Skin for MediaWiki
 
 Author: Wesley Ellis (tahnok@gmail.com)
