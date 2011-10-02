@@ -1,6 +1,8 @@
 # Pocket #
 Mobile Skin for MediaWiki
 
+You can see screenshots here: http://tahnok.imgur.com/pocket
+
 Author: Wesley Ellis (tahnok@gmail.com)
 
 Required Version: Mediawiki v1.16
